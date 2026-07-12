@@ -1,111 +1,209 @@
 # Day 1 — Introduction to GenAI
 **Samsung GenAI Program · SRM Kattankulathur · 13 July 2026**
 
+> Read this page on the projector or open this URL on your laptop before doing anything:
+> `https://github.com/Anilmidna/samsung-genai/blob/main/day1/day1readme.md`
+
 ---
 
-## One-Time Setup — Do This First (Day 1 Only)
+## Part 1 — One-Time Setup (Day 1 Only)
 
-> You only fork and clone once. From Day 2 onwards, skip this section.
+> You do this only today. From Day 2 onwards, skip to Part 2.
 
-### Step 1 — Fork the trainer's repo
-1. Go to the repo URL on the projector
-2. Click **Fork** → **Create fork**
-3. You now have your own copy at `https://github.com/YOUR-USERNAME/samsung-genai`
+### 1A — Verify your AI accounts
+Open each of these in a browser tab and confirm you can log in:
 
-### Step 2 — Clone to your laptop
-Open **Git Bash** (Windows Start → type Git Bash → Enter):
+| Tool | URL | Model to use |
+|---|---|---|
+| ChatGPT | chat.openai.com | GPT-4o |
+| Claude | claude.ai | Claude Sonnet |
+| Gemini | gemini.google.com | Gemini 1.5 Pro |
+
+---
+
+### 1B — Fork the trainer's repo
+1. Open the repo URL shown on the projector
+2. Click **Fork** (top right) → click **Create fork**
+3. Wait until you see `YOUR-USERNAME/samsung-genai` in the browser address bar
+
+---
+
+### 1C — Clone your fork to your laptop
+1. Press **Windows key** → type **Git Bash** → press Enter
+2. A black terminal window opens. Type these commands one line at a time:
+
 ```bash
 git clone https://github.com/YOUR-USERNAME/samsung-genai.git
 cd samsung-genai
 ```
 
-### Step 3 — Verify your AI accounts
-Make sure you can log in to all three before starting Lab 1:
-- ChatGPT → [chat.openai.com](https://chat.openai.com) — use **GPT-4o**
-- Claude → [claude.ai](https://claude.ai) — use **Claude Sonnet**
-- Gemini → [gemini.google.com](https://gemini.google.com) — use **Gemini 1.5 Pro**
+Replace `YOUR-USERNAME` with your actual GitHub username.
+
+3. You should see a `samsung-genai` folder appear on your Desktop or Documents.
 
 ---
 
-## Today's Labs
-
-| Lab | Type | Scored |
-|---|---|---|
-| Lab 1 — Tool Setup & Pipeline Test | Individual | No |
-| Lab 2 — Next Word Prediction | Team (4 students) | Contributes to Diamond |
-| Lab 3 — Model Face-Off | Individual | Yes — Silver / Gold / Diamond |
-
----
-
-## Lab 1 — Tool Setup & Pipeline Test
+## Part 2 — Lab 1: Tool Setup & Pipeline Test
 **Not scored · ~30 minutes**
 
-**What you do:**
-- Verify all 3 AI accounts are working
-- Fork and clone the repo (Steps 1–2 above)
-- Edit `submissions/checkin.json` — change `student_name` and `github` fields only
-- Push it → your name appears as a green tick on the live dashboard
-
-**You are done when:** Your name shows green on the dashboard on the projector.
-
-**Lab URL:** Trainer will share on projector
+This lab proves your entire submission pipeline works before any scored lab begins.
 
 ---
 
-## Lab 2 — Next Word Prediction
+### Step 1 — Open checkin.json
+1. Press **Windows key + E** to open File Explorer
+2. Navigate to where you cloned the repo (Desktop or Documents)
+3. Open `samsung-genai` folder → open `submissions` folder
+4. Right-click **checkin.json** → **Open with** → **Notepad**
+
+You will see:
+```json
+{
+  "student_name": "Type Your Full Name Here",
+  "github": "your-github-username",
+  "team": "TBD",
+  "status": "ready"
+}
+```
+
+---
+
+### Step 2 — Edit two fields only
+Change **only** these two lines. Do not touch anything else:
+- `"student_name"` → replace with your full name (e.g. `"Rahul Kumar"`)
+- `"github"` → replace with your GitHub username (e.g. `"rahulkumar2024"`)
+
+Press **Ctrl+S** to save. Close Notepad.
+
+---
+
+### Step 3 — Push to GitHub
+1. In File Explorer, go back up to the `samsung-genai` folder (not submissions)
+2. Right-click on empty space inside the folder → click **Git Bash Here**
+3. A black terminal opens. Type these 3 commands one by one:
+
+```bash
+git add submissions/checkin.json
+git commit -m "Day 1 check-in"
+git push origin main
+```
+
+4. If asked for a username and password, enter your GitHub credentials.
+
+---
+
+### Step 4 — Confirm on dashboard
+Look at the projector. Within 30 seconds your name should appear as a **green tick**.
+
+If it does — your pipeline works. You are ready for the scored labs.
+
+---
+
+## Part 3 — Lab 2: Next Word Prediction
 **Team activity · ~45 minutes + 20 min Gradio Showdown**
 
-**What you do:**
-- Trainer announces 10 teams (4 students each) — find your team
-- Team Lead opens the notebook in Google Colab (link on projector)
-- Choose ONE model: `SmolLM2-360M-Instruct` / `distilgpt2` / `Qwen2.5-0.5B`
-- Complete all 8 Missions in the notebook
-- Run `demo.launch(share=True)` → copy your `gradio.live` URL
-- Present your demo to the class (2 min per team — Gradio Showdown)
+---
 
-**Note your Gradio URL** — you will need it when filling day1.json after Lab 3.
-
-**What earns Diamond:** Your `lab2_gradio_url` must be in day1.json AND you caught the hallucination in Lab 3.
-
-**Lab URL:** Trainer will share Colab link on projector
+### Step 1 — Find your team
+Trainer will announce 10 teams of 4 students. Find your teammates.
+One person in each team is the **Team Lead** — they will present the Gradio demo.
 
 ---
 
-## Lab 3 — Model Face-Off
+### Step 2 — Open the notebook
+Open Lab 2 from the URL on the projector. Click **Open in Google Colab**.
+In Colab: **File → Save a copy in Drive** (so you can edit it).
+
+---
+
+### Step 3 — Complete all 8 Missions
+Run each cell in order. Key missions:
+
+| Mission | What to do |
+|---|---|
+| 1 | Install libraries — run cell, no errors |
+| 2 | Imports — run cell |
+| 3 | Choose ONE model — uncomment only one line |
+| 4 | Load model — wait for "Model Loaded" |
+| 5 | Tokenization — note vocab size and token count |
+| 6 | Fill in the 3 TODOs (logits, softmax, top-k) |
+| 7 | Test with different prompts |
+| 8 | Run `demo.launch(share=True)` → copy the `gradio.live` URL |
+
+---
+
+### Step 4 — Note your Gradio URL
+After Mission 8 runs, you will see a line like:
+```
+Running on public URL: https://abc123def456.gradio.live
+```
+**Copy this URL and keep it** — you need it when filling day1.json after Lab 3.
+
+---
+
+### Step 5 — Present your demo (Gradio Showdown)
+Trainer calls each team. Team Lead connects to projector and opens the Gradio URL.
+You have **2 minutes** to show:
+- Which model you used and why
+- Your most interesting prediction
+- What you learned about how transformers work
+
+---
+
+## Part 4 — Lab 3: Model Face-Off
 **Individual · ~60 minutes**
 
-**What you do:**
-- Open Lab 3 from the URL on the projector
-- Run 3 prompts (P1, P2, P3) in ChatGPT, Claude, and Gemini — same prompt, all three models
-- **P3 has a trap** — one or more models may hallucinate. Find it, verify it, note which model and what it said wrongly.
-- Fill in your observations per prompt
-- Complete the submission (see below)
+---
 
-**What earns each badge:**
-
-| Badge | Condition checked in day1.json |
-|---|---|
-| 🥈 Silver | `student_name` filled + `p1_winner` filled |
-| 🥇 Gold | `hallucination_found: true` |
-| 💎 Diamond | Gold + `lab2_gradio_url` contains `gradio.live` |
-
-> The dashboard calculates your badge automatically. You do not choose it yourself.
-
-**Lab URL:** Trainer will share on projector
+### Step 1 — Open Lab 3
+Open the URL shown on the projector.
 
 ---
 
-## Submitting Day 1
+### Step 2 — Set up your models
+Before starting, open a **new chat** in each of the 3 tools:
+- ChatGPT: Settings → Personalization → Memory → turn **OFF**
+- Claude: open a new conversation
+- Gemini: open a new conversation
 
-> One JSON file covers both Lab 2 and Lab 3. One push at the end of the day.
+---
+
+### Step 3 — Run all 3 prompts
+The lab has 3 prompts (P1, P2, P3). For each prompt:
+1. Copy the prompt from the lab page
+2. Paste it into ChatGPT → note the response
+3. Paste the same prompt into Claude → note the response
+4. Paste the same prompt into Gemini → note the response
+5. Fill in your observations in the lab page
+
+**P3 has a trap** — one or more models will likely give wrong information.
+Find it. Verify it. Note exactly what the model said and what is actually correct.
+
+---
+
+### Step 4 — Fill the submission form in Lab 3
+Complete all fields on the lab page: winners, observations, hallucination details, overall winner.
+
+---
+
+## Part 5 — Submit day1.json (After Lab 3)
+
+This covers BOTH Lab 2 and Lab 3 in one file. One push at the end of the day.
+
+---
 
 ### Step 1 — Copy the JSON template
-In Lab 3, click **Copy JSON Template** at the bottom of the page.
+At the bottom of Lab 3, click **Copy JSON Template**.
+
+---
 
 ### Step 2 — Open Notepad and paste
-Press **Windows key** → type **Notepad** → Enter → paste (Ctrl+V)
+Press **Windows key** → type **Notepad** → Enter
+Press **Ctrl+V** to paste.
 
-### Step 3 — Fill in your answers
+---
+
+### Step 3 — Fill in every field
 
 ```json
 {
@@ -113,20 +211,20 @@ Press **Windows key** → type **Notepad** → Enter → paste (Ctrl+V)
   "student_name": "Your Full Name",
   "github": "your-github-username",
 
-  "lab2_team": "Team Alpha",
+  "lab2_team": "Your Team Name",
   "lab2_model_used": "SmolLM2-360M-Instruct",
   "lab2_gradio_url": "https://xxxx.gradio.live",
 
   "lab": "model_face_off",
-  "p1_winner": "chatgpt",
+  "p1_winner": "chatgpt or claude or gemini",
   "p1_observation": "What stood out comparing models on Prompt 1",
-  "p2_winner": "claude",
+  "p2_winner": "chatgpt or claude or gemini",
   "p2_observation": "What stood out comparing models on Prompt 2",
-  "p3_winner": "gemini",
+  "p3_winner": "chatgpt or claude or gemini",
   "p3_observation": "What stood out comparing models on Prompt 3",
   "hallucination_found": false,
   "hallucination_detail": "Model | What it stated | What is actually correct",
-  "overall_winner": "chatgpt",
+  "overall_winner": "chatgpt or claude or gemini",
   "biggest_surprise": "One sentence on what surprised you most",
   "stretch_done": false,
   "stretch_prompt": "",
@@ -135,19 +233,41 @@ Press **Windows key** → type **Notepad** → Enter → paste (Ctrl+V)
 }
 ```
 
-> **If you caught a hallucination:** set `"hallucination_found": true` and fill `hallucination_detail`.
+Field-by-field guide:
+
+| Field | What to enter |
+|---|---|
+| `student_name` | Your full name |
+| `github` | Your GitHub username |
+| `lab2_team` | Your team name from Lab 2 |
+| `lab2_model_used` | The model your team chose in Colab |
+| `lab2_gradio_url` | The gradio.live URL from Mission 8 |
+| `p1_winner` / `p2_winner` / `p3_winner` | Which model gave the best response — write `chatgpt`, `claude`, or `gemini` |
+| `hallucination_found` | Write `true` if you caught a wrong answer in P3, otherwise `false` |
+| `hallucination_detail` | If true — write which model, what it said, and what is actually correct |
+| `overall_winner` | Your pick across all 3 prompts |
+| `biggest_surprise` | One honest sentence |
+| `stretch_done` | Write `true` if you did the bonus prompt, otherwise `false` |
+
+---
 
 ### Step 4 — Save as day1.json
+
 **File → Save As**
-- Navigate to: `samsung-genai` → `submissions` folder
+- Navigate to: your `samsung-genai` folder → `submissions` folder
 - File name: `day1.json`
-- Save as type: **All Files** ← critical, do not skip this
+- **Save as type: All Files** ← do not skip this step
 - Click Save
 
-> ⚠️ If you leave "Save as type" as Text Documents, the file saves as `day1.json.txt` and will NOT work.
+> ⚠️ If Save as type is left as "Text Documents" the file saves as `day1.json.txt` and the dashboard cannot read it.
+
+---
 
 ### Step 5 — Push to GitHub
-In File Explorer, open the `samsung-genai` folder → right-click empty space → **Git Bash Here**
+
+1. Open File Explorer → go to your `samsung-genai` folder (not submissions)
+2. Right-click on empty space → **Git Bash Here**
+3. Type these 3 commands one by one:
 
 ```bash
 git add submissions/day1.json
@@ -157,37 +277,35 @@ git push origin main
 
 Replace `YOUR NAME` with your actual name in the commit message.
 
-### Step 6 — Confirm on dashboard
-Your badge (Silver / Gold / Diamond) appears on the live dashboard within 30 seconds.
-
 ---
 
-## Quick Reference
+### Step 6 — Check your badge on the dashboard
+Open the dashboard URL from the projector. Within 30 seconds you will see your badge:
 
-| Item | Details |
+| Badge | What it means |
 |---|---|
-| Submission file | `submissions/day1.json` |
-| JSON template | Copy JSON Template button in Lab 3 |
-| Git push | `git push origin main` |
-| Dashboard | URL on projector |
-| Gold requires | `"hallucination_found": true` in day1.json |
-| Diamond requires | Gold + `"lab2_gradio_url"` filled with your gradio.live URL |
+| 💎 Diamond | You caught the hallucination AND your Gradio URL is in day1.json |
+| 🥇 Gold | You caught the hallucination in P3 (`hallucination_found: true`) |
+| 🥈 Silver | You submitted day1.json with your name filled |
+
+> The badge is calculated automatically from what you put in day1.json. You cannot choose it yourself.
 
 ---
 
-## How Every Day Works (Days 2–5)
+## How Days 2–5 Work
 
-The structure is the same every day:
+From Day 2 onwards you already have your fork and clone. No setup needed.
 
+Each day:
 1. Open that day's lab from the URL on the projector
-2. Complete the labs
-3. Copy JSON template from the last lab → fill answers → save as `submissions/day2.json` (day3, day4, day5)
-4. Push once at end of day
+2. Complete all labs
+3. Click **Copy JSON Template** at the end → Notepad → fill answers → save as `submissions/day2.json`
+4. Push:
 
 ```bash
-git add submissions/dayN.json
-git commit -m "Day N submission - YOUR NAME"
+git add submissions/day2.json
+git commit -m "Day 2 submission - YOUR NAME"
 git push origin main
 ```
 
-> You do **not** need to fork again. You do **not** need to pull the trainer's repo. Just push your submissions file each day.
+Change the day number each day. Everything else is identical.

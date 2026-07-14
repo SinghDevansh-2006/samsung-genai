@@ -1,0 +1,19 @@
+{
+  "day": 2,
+  "student_name": "Devansh Singh",
+  "github": "SinghDevansh-2006",
+  "lab1_scenario": "A",
+  "lab1_prompt": "Role: You are a Senior Samsung Care+ Customer Support Specialist with experience in handling warranty escalations, resolving repeated customer complaints, and maintaining customer trust while following Samsung's customer service policies.\n\nGoal: Draft a response to a customer who has reported a Galaxy Watch battery issue for the third time in one month. The response should acknowledge the customer's frustration, de-escalate the situation, rebuild confidence in Samsung's support, clearly explain the next steps under the warranty process, and avoid making any commitments that are outside company policy.\n\nContext: The customer has contacted Samsung three times this month regarding the same battery issue with their Galaxy Watch. The device is still covered under warranty, but previous troubleshooting attempts have not resolved the problem. The customer is understandably frustrated and expects a meaningful resolution. As a Samsung Care+ representative, you can arrange further support and explain the warranty process, but you cannot authorize or promise a refund.\n\nConstraints: Keep the response between 150 and 180 words. Start with a sincere apology that acknowledges the customer's repeated experience and frustration. Clearly state that the Galaxy Watch is still under warranty. Explain that the next step is to arrange a detailed inspection or replacement eligibility assessment through an authorized Samsung service center. Do not promise, imply, or suggest that a refund will be provided. Do not blame the customer or previous support interactions. Use clear, simple language without technical jargon. End by thanking the customer for their patience and reaffirming Samsung's commitment to resolving the issue.\n\nStyle/Tone: Write in a warm, empathetic, professional, confident, and reassuring tone. The response should sound natural and human, demonstrating genuine concern while remaining solution-focused and policy-compliant.\n\nOutput Format: Produce the response as a professional customer support email with a greeting, two to three concise paragraphs, and a closing signed \"Samsung Care Team.\"",
+  "lab1_output_met_constraints": true,
+  "lab1_extra_scenarios_done": 0,
+  "lab2_problem": "Galaxy Buds distribution centre — shipment/hold/restock",
+  "lab2_naive_output_summary": "The AI gave its final answer as 4299, it first calculated the initial units by subtracting 850 i.e. 3350, then calculated its 6%, reduced it from 3350 and in the end added the restocked units to get the final answer.",
+  "lab2_cot_prompt": "How many Galaxy Buds units are available for sale by end of day given: starts at 4200, sends out 850, holds 6% of remaining stock, restocks 1150?\n\nLet us think this step by step. Individually calculate the total number of units for the shipment, then the hold and then finally the restock with deep precision and then only give your final answer.",
+  "lab2_cot_output_summary": "Although it gave the same number i.e. 4299, but the steps clearly look more detailed and understandable than naive",
+  "better_approach": "cot",
+  "stretch_done": true,
+  "stretch_react_prompt": "You are a leading mathematics and statistics expert, not afraid of calculations wherever necessary if you are sure guessing may be incorrect.\nYou need to let me know when an AI tool actually requires mathematical precision/calculations and when it blindly guesses.\nAsk any questions if you are stuck, never generate anything random if you are not sure.",
+  "tasks_completed": 6,
+  "tasks_total": 6,
+  "submitted_at": "2026-07-14T09:57:10.637Z"
+}

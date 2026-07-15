@@ -1,0 +1,20 @@
+{
+  "day": 3,
+  "student_name": "Devansh Singh",
+  "github": "SinghDevansh-2006",
+  "ir_hallucination_done": true,
+  "ir_bias_done": true,
+  "ir_guardrail_builder_done": true,
+  "ir_battle_complete": true,
+  "ir_battle_blocked": 8,
+  "ir_battle_total": 8,
+  "rag_scenario": "A",
+  "rag_no_rag_summary": "It has just summarized the question and has said what the question represents, does not sound that confident, but yes since it has just extracted a summary of the question, it seems plausibly right.",
+  "rag_grounded_summary": "Yes, it sounds definitely more confident and uses more technical terms with more confidence and credibility with required bolded text in bulletins.",
+  "rag_judgement": "confirmed_right",
+  "stretch_done": true,
+  "stretch_notes": "I repeated the warranty question with and without the provided document. The No-RAG answer was generally correct, but the RAG version was more precise because it relied strictly on the supplied warranty policy. When the document was available, the model prioritized the retrieved information over general knowledge.",
+  "tasks_completed": 6,
+  "tasks_total": 6,
+  "submitted_at": "2026-07-15T06:55:44.323Z"
+}

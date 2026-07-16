@@ -1,0 +1,52 @@
+{
+  "day": 4,
+  "student_name": "Devansh Singh",
+  "github": "SinghDevansh-2006",
+  "incidents": [
+    {
+      "id": "A",
+      "failure_type": "Hallucination",
+      "principle": "Reliability",
+      "justification": "AI Hallucination refers to answering deeply fabricated things and so has been done in this case when the company didn't even have such discount, it affected the principle of reliability of users against the company."
+    },
+    {
+      "id": "B",
+      "failure_type": "Privacy Violation",
+      "principle": "Privacy",
+      "justification": "Since the AI chat assistant was secretly logging each and every user's conversation, it violates the privacy of users."
+    },
+    {
+      "id": "C",
+      "failure_type": "Deepfake/Misinformation",
+      "principle": "Security",
+      "justification": "This was clearly a deepfake of the well-known business leader to spread misinformation. It violated the security concerns of the company."
+    },
+    {
+      "id": "D",
+      "failure_type": "Bias/Discrimination",
+      "principle": "Fairness",
+      "justification": "This situation clearly described a gender-bias against women who are equally skilled and violates fairness towards women."
+    },
+    {
+      "id": "E",
+      "failure_type": "Bias/Discrimination",
+      "principle": "Human Oversight",
+      "justification": "While the unequal treatment is a fairness issue, the description emphasizes that no human noticed or intervened for weeks, making inadequate human oversight the primary Responsible AI failure."
+    },
+    {
+      "id": "F",
+      "failure_type": "Deepfake/Misinformation",
+      "principle": "Security",
+      "justification": "AI-generated voice impersonation enabled social engineering and financial fraud, making security the primary principle violated."
+    }
+  ],
+  "justifications_written": 6,
+  "stretch_done": true,
+  "stretch_company": "xAI – Grok",
+  "stretch_failure_type": "Deepfake/Misinformation",
+  "stretch_principle": "Safety",
+  "stretch_notes": "In 2025, xAI's Grok chatbot generated and amplified antisemitic and extremist content after a system update, producing harmful misinformation before the issue was corrected. This fits the deepfake/misinformation failure type because the AI generated false and harmful content, and it primarily violated the safety principle by creating outputs that could cause real-world harm.",
+  "tasks_completed": 6,
+  "tasks_total": 6,
+  "submitted_at": "2026-07-16T06:30:15.838Z"
+}
